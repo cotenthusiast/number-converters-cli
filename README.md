@@ -1,7 +1,7 @@
-# Number Converter CLI v1.0
+# Number Converter CLI v1.02
 
 ## Description
-A simple CLI tool that (currently) converts between binary and decimal
+A simple CLI tool that converts between binary, decimal, hex and octal
 
 ## Project Structure
 ```bash
@@ -9,18 +9,17 @@ numberconverters/
 │
 ├── converters/          # Package for all conversion modules
 │   ├── __init__.py      # Marks this as a package
-│   ├── binary.py        # Binary ↔ denary functions
-│   ├── hex.py           # Hex ↔ denary functions (future)
-│   └── octal.py         # Octal ↔ denary functions (future)
+│   ├── binary.py        # Binary ↔ Decimal functions
+│   ├── hex.py           # Hex ↔ Decimal and Hex ↔ Binary functions 
+│   └── octal.py         # Octal ↔ Decimal , Octal ↔ Binary and Octal ↔ Hex functions 
 ├── cli.py               # CLI interface that uses the package
 └── README.md
 ```
 
 ## Features
-- Convert denary numbers to binary
-- Convert binary numbers to denary
-- Easy-to-use CLI with `to-binary` and `to-denary` commands
-- Future: Add hex and octal conversions
+- Convert numbers between decimal, binary, hexadecimal, and octal
+- Easy-to-use command line interface (CLI)
+- Planned future enhancement: organize sub-parsers into functional groups
 
 ## Usage
 ```bash
