@@ -1,5 +1,6 @@
 from converters.binary import signed_binary_to_denary as binary_to_denary
-from converters.binary import denary_to_signed_binary as denary_to_binary
+from converters.binary import denary_to_signed_binary as binary_to_denary
+from converters.binary import unsigned_binary_to_denary
 from converters.hexadecimal import *
 from converters.octal import *
 
@@ -7,7 +8,7 @@ import argparse
 
 parser = argparse.ArgumentParser(
     prog = "converter",
-    description = "program that converts between different formats ",
+    description = "program that converts between different formats \n",
     epilog = "Thank you for using the %(prog)s"
 )
 
@@ -16,7 +17,7 @@ subparsers = parser.add_subparsers(
     help = "conversions between different formats"
 )
 
-#parser for binary to denary
+#parser for signed binary to denary
 bin2dec_parser = subparsers.add_parser(
     "bin2dec", help = "convert between binary and denary")
 bin2dec_parser.add_argument(
@@ -25,6 +26,17 @@ bin2dec_parser.add_argument(
     help = "binary number"
     )
 bin2dec_parser.set_defaults(func=binary_to_denary)
+
+#parser for unsigned binary to denary
+ubin2dec_parser = subparsers.add_parser(
+    "ubin2dec", help = "convert between unsigned binary and denary"
+    )
+ubin2dec_parser.add_argument(
+    "operand",
+    type = str,
+    help = "unsigned binary number"
+    )
+ubin2dec_parser.set_defaults(func=unsigned_binary_to_denary)
 
 #parser for denary to binary
 dec2bin_parser = subparsers.add_parser(
